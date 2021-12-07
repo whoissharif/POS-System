@@ -26,7 +26,11 @@ class WalletManagement extends Controller
 
     public function allWallet(){
         $allRecords = Wallet::get();
-        return $allRecords;
+        $data = [
+            "pageTitle" => "All Wallets",
+            "wallets" => $allRecords
+        ];
+        return view('page')->with($data);
     }
 
     public function singleWallet(Request $request){
