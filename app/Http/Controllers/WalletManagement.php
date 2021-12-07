@@ -28,4 +28,9 @@ class WalletManagement extends Controller
         $allRecords = Wallet::get();
         return $allRecords;
     }
+
+    public function singleWallet(Request $request){
+        $singleRecord = Wallet::where("wallet_number", $request->walletNumber)->get();
+        return $singleRecord;
+    }
 }

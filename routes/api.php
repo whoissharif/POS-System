@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/newWallet',[WalletManagement::class, 'newWallet']);
 Route::get('/wallets',[WalletManagement::class, 'allWallet']);
+Route::get('/singleWallet/{walletNumber}',[WalletManagement::class, 'singleWallet']);
