@@ -23,4 +23,9 @@ class WalletManagement extends Controller
 
         return $newWallet;
     }
+
+    public function allWallet(){
+        $allRecords = Wallet::get();
+        return $allRecords;
+    }
 }
