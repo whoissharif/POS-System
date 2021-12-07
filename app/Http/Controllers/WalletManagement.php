@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Wallet;
+
 class WalletManagement extends Controller
 {
     public function newWallet(Request $request){
@@ -11,10 +13,14 @@ class WalletManagement extends Controller
         $walletType = $request->walletType;
         $walletOwner = $request->walletOwner;
 
-        return [
-            "number" => $walletNumber,
-            "type" => $walletType,
-            "owner" => $walletOwner
-        ];
+        $newWallet = new Wallet;
+
+        $newWallet->wallet_number = $walletNumber;
+        $newWallet->wallet_type = $walletType;
+        $newWallet->wallet_owner = $walletOwner;
+
+        $newWallet->save();
+
+        return $newWallet;
     }
 }
