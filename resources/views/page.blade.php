@@ -11,7 +11,7 @@
     <title>{{$pageTitle}}</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h4>Hello, world!</h4>
 
     <table class="table">
   <thead>
@@ -29,7 +29,9 @@
       <td>{{$wallet["wallet_number"]}}</td>
       <td>{{$wallet["wallet_type"]}}</td>
       <td>{{$wallet["wallet_owner"]}}</td>
-     
+    <td>
+        <a href="http://localhost:8000/wallet/{{$wallet['wallet_number']}}">View</a>
+    </td>
     </tr>
     @endforeach
   </tbody>

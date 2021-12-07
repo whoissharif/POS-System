@@ -20,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::get('/wallets',[WalletManagement::class, 'allWallet']);
+
+Route::get('/wallet/{walletNumber}',[WalletManagement::class, 'singleWallet']);

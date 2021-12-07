@@ -35,6 +35,10 @@ class WalletManagement extends Controller
 
     public function singleWallet(Request $request){
         $singleRecord = Wallet::where("wallet_number", $request->walletNumber)->get();
-        return $singleRecord;
+        $data = [
+            "pageTitle" => "Wallet",
+            "wallet" => $singleRecord
+        ];
+        return view('walletDetail')->with($data);
     }
 }
